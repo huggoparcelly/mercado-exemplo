@@ -9,17 +9,15 @@ public class Sistema {
 	public static void main(String[] args) {
 		ProdutoService produtoService = new ProdutoService();
 
-		ProdutoRepository catalogo = new ProdutoRepository();
-
 		Produto leite = new Produto("Leite", "Parmalat");
 		Produto pao = new Produto("Pão", "Plus Vita");
 		Produto ovo = new Produto("Ovo", "Ovos da granja");
 		Produto cafe = new Produto("Café", "Nescafé");
 
-		catalogo.addProduto(leite);
-		catalogo.addProduto(pao);
-		catalogo.addProduto(ovo);
-		catalogo.addProduto(cafe);
+		produtoService.adicionaProduto(leite);
+		produtoService.adicionaProduto(pao);
+		produtoService.adicionaProduto(ovo);
+		produtoService.adicionaProduto(cafe);
 
 		Lote lote = new Lote(leite, 10L);
 
@@ -27,6 +25,6 @@ public class Sistema {
 		System.out.println(leite);
 		System.out.println(lote);
 
-		System.out.println(produtoService.listarProdutoPeloNome("Ovo"));
+		System.out.println(produtoService.listarProdutoPeloNome("Ov"));
 	}
 }

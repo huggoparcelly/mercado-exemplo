@@ -18,6 +18,18 @@ public class ProdutoService {
         this.produtoRepository = new ProdutoRepository();
     }
 
+    public void adicionaProduto(Produto produto) {
+        produtoRepository.addProduto(produto);
+    }
+
+    public void atualizaProduto(Produto produto) {
+        produtoRepository.atualizarProduto(produto);
+    }
+
+    public void removeUmProduto(Produto produto) {
+        produtoRepository.removerUmProduto(produto);
+    }
+
     public List<Produto> listarProdutosLote(String nome) {
         List<Lote> lote = loteRepository.listarLote();
         List<Produto> produtosNoLote = getProdutoFromLote(lote);
