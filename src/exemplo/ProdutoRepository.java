@@ -1,8 +1,6 @@
 package exemplo;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ProdutoRepository {
 
@@ -25,6 +23,17 @@ public class ProdutoRepository {
     }
 
     public List<Produto> listarProduto() {
-        return (List<Produto>) catalogo.values();
+        return catalogo.values().stream().toList();
+    }
+
+    public List<Produto> listarProdutoPeloNome(String nome) {
+        List<Produto> produtos = listarProduto();
+        List<Produto> getProdutoPorNome = new ArrayList<>();
+        for (Produto produto : produtos) {
+            if(produto.getNome().contains(nome)) {
+                getProdutoPorNome.add(produto);
+            }
+        }
+        return getProdutoPorNome;
     }
 }

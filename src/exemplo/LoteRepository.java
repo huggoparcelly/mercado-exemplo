@@ -1,5 +1,6 @@
 package exemplo;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,8 +25,8 @@ public class LoteRepository {
         return estoque.get(id);
     }
 
-    public List<Lote> listarLote() {
-        return (List<Lote>) estoque.values();
+    public Collection<Lote> listarLote() {
+        return estoque.values();
     }
 
 

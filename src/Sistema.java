@@ -20,7 +20,10 @@ public class Sistema {
 
 		Lote lote = new Lote(leite, 10L);
 
+		System.out.println(ovo);
 		System.out.println(leite);
 		System.out.println(lote);
+
+		catalogo.listarProdutoPeloNome("Ovo");
 	}
 }
