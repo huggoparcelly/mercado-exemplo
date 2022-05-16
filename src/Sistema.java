@@ -1,10 +1,13 @@
 import exemplo.Lote;
 import exemplo.Produto;
-import exemplo.ProdutoRepository;
+import exemplo.repository.LoteRepository;
+import exemplo.repository.ProdutoRepository;
+import exemplo.service.ProdutoService;
 
 public class Sistema {
 
 	public static void main(String[] args) {
+		ProdutoService produtoService = new ProdutoService();
 
 		ProdutoRepository catalogo = new ProdutoRepository();
 
@@ -24,6 +27,6 @@ public class Sistema {
 		System.out.println(leite);
 		System.out.println(lote);
 
-		catalogo.listarProdutoPeloNome("Ovo");
+		System.out.println(produtoService.listarProdutoPeloNome("Ovo"));
 	}
 }

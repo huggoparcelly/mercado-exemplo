@@ -1,4 +1,6 @@
-package exemplo;
+package exemplo.repository;
+
+import exemplo.Lote;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -7,7 +9,11 @@ import java.util.Map;
 
 public class LoteRepository {
 
-    Map<String, Lote> estoque = new HashMap<>();
+    Map<String, Lote> estoque;
+
+    public LoteRepository() {
+        this.estoque = new HashMap<>();
+    }
 
     public void addLote(Lote lote) {
         estoque.put(lote.getId(), lote);
@@ -25,8 +31,8 @@ public class LoteRepository {
         return estoque.get(id);
     }
 
-    public Collection<Lote> listarLote() {
-        return estoque.values();
+    public List<Lote> listarLote() {
+        return estoque.values().stream().toList();
     }
 
 

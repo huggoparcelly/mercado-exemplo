@@ -1,10 +1,16 @@
-package exemplo;
+package exemplo.repository;
+
+import exemplo.Produto;
 
 import java.util.*;
 
 public class ProdutoRepository {
 
-    Map<String, Produto> catalogo = new HashMap<>();
+    Map<String, Produto> catalogo;
+
+    public ProdutoRepository() {
+        this.catalogo = new HashMap<>();
+    }
 
     public void addProduto(Produto produto) {
         catalogo.put(produto.getId(), produto);
@@ -26,14 +32,4 @@ public class ProdutoRepository {
         return catalogo.values().stream().toList();
     }
 
-    public List<Produto> listarProdutoPeloNome(String nome) {
-        List<Produto> produtos = listarProduto();
-        List<Produto> getProdutoPorNome = new ArrayList<>();
-        for (Produto produto : produtos) {
-            if(produto.getNome().contains(nome)) {
-                getProdutoPorNome.add(produto);
-            }
-        }
-        return getProdutoPorNome;
-    }
 }
